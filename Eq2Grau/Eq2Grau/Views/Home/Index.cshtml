@@ -1,8 +1,20 @@
 ﻿@{
+    //este pedaço de codigo esta escrito em C#
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Soluções de uma Equação do 2º Grau</h1>
 </div>
+
+<!-- recolher os dados dos parametros da equaçao do 2ºgrau -->
+<form>
+    <div>
+        <p>Escreva os parâmetros da equação: </p>
+        A= <input type="text" /> <br /><br />
+        B= <input type="text" /> <br /><br />
+        C= <input type="text" /> <br /><br />
+
+        <input type="submit" value="calcular" />
+    </div>
+</form>
