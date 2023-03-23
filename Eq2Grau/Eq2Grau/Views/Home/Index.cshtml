@@ -1,6 +1,15 @@
 ﻿@{
     //este pedaço de codigo esta escrito em C#
     ViewData["Title"] = "Home Page";
+
+    //var auxiliar
+    string resposta = "";
+
+    //recuperar os dados enviados pelo controller
+    if (!string.IsNullOrEmpty(ViewBag.X1)){
+        resposta = "As raízes são: x1= " + ViewBag.X1 + " e x2= " + ViewBag.X2;
+    }
+
 }
 
 <div class="text-center">
@@ -10,11 +19,13 @@
 <!-- recolher os dados dos parametros da equaçao do 2ºgrau -->
 <form>
     <div>
-        <p>Escreva os parâmetros da equação: </p>
-        A= <input type="text" /> <br /><br />
-        B= <input type="text" /> <br /><br />
-        C= <input type="text" /> <br /><br />
+        <p>Escreva os parâmetros da equação:</p>
+        A= <input type="text" name="A" /> <br /><br />
+        B= <input type="text" name="B" /> <br /><br />
+        C= <input type="text" name="C" /> <br /><br />  
 
         <input type="submit" value="calcular" />
     </div>
 </form>
+<br />
+<h4>@resposta</h4>

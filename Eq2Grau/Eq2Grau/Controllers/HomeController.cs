@@ -11,7 +11,26 @@ namespace Eq2Grau.Controllers {
             _logger = logger;
         }
 
-        public IActionResult Index() {
+        public IActionResult Index(int A, int B, int C) {
+            //variavel auxiliar
+            double delta = B * B - 4 * A * C;
+            string x1 = "", x2 = "";
+            //validar se valor A > 0
+            if (A != 0){
+                if (delta >= 0){
+                    //soluçao para delta positivo ou 0
+                    x1 = (-B + Math.Sqrt(delta)) / (2 * A) + "";
+                    x2 = (-B - Math.Sqrt(delta)) / (2 * A) + "";
+                }else{
+                    //solução complexa
+                    x1 = -B / (2 * A) + " + " + Math.Sqrt(-delta) / (2 * A) + "i";
+                    x2 = -B / (2 * A) + " - " + Math.Sqrt(-delta) / (2 * A) + "i";
+                }
+                //preparar resposta para ser enviada para o browser
+                ViewBag.X1 = x1;
+                ViewBag.X2 = x2;
+
+            }
             return View();
         }
 
